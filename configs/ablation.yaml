@@ -1,0 +1,46 @@
+# Ablation study configuration: Baseline without dynamic guidance
+
+experiment_name: preference-diffusion-ablation-no-dynamic-guidance
+
+# Data configuration (same as default)
+data:
+  max_train_samples: 5000
+  max_val_samples: 1000
+  image_size: 256
+  num_workers: 4
+
+# Model configuration - ABLATION: disable dynamic guidance
+model:
+  num_objectives: 3
+  use_dynamic_guidance: false  # Ablation: disable dynamic guidance
+  guidance_scale: 7.5
+  num_inference_steps: 50
+
+# Training configuration (same as default)
+training:
+  seed: 42
+  num_epochs: 50
+  batch_size: 16
+  learning_rate: 0.0001
+  min_learning_rate: 0.000001
+  weight_decay: 0.01
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  gradient_clip: 1.0
+  use_mixed_precision: true
+  early_stopping_patience: 10
+  checkpoint_dir: checkpoints_ablation
+  log_interval: 100
+
+# Preference learning configuration (same as default)
+preference:
+  pareto_temperature: 0.5
+  min_weight: 0.1
+  preference_loss_weight: 0.1
+
+# Dynamic guidance configuration (not used in this ablation)
+guidance:
+  base_guidance: 7.5
+  min_guidance: 3.0
+  max_guidance: 15.0
+  adaptation_rate: 0.1

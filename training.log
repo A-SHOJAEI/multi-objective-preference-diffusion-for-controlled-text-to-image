@@ -1,0 +1,588 @@
+2026-02-10 17:05:07,807 - __main__ - INFO - Loading configuration from configs/default.yaml
+2026-02-10 17:05:07,807 - multi_objective_preference_diffusion_for_controlled_text_to_image.utils.config - INFO - Loading configuration from configs/default.yaml
+2026-02-10 17:05:07,809 - __main__ - INFO - Random seed set to 42
+2026-02-10 17:05:07,809 - __main__ - INFO - Using device: cuda
+2026-02-10 17:05:07,809 - __main__ - INFO - Creating datasets...
+2026-02-10 17:05:07,809 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions train split...
+2026-02-10 17:05:07,809 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-10 17:05:08,202 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,244 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,260 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-10 17:05:08,293 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,318 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:08,392 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:08,428 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,474 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 200 OK"
+2026-02-10 17:05:08,498 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,525 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:08,616 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:08,648 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,686 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-10 17:05:08,714 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,746 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-02-10 17:05:08,768 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,793 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:08,817 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:08,861 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-10 17:05:08,969 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 5000 samples from train split
+2026-02-10 17:05:08,970 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions validation split...
+2026-02-10 17:05:08,970 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-10 17:05:09,021 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:09,064 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:09,077 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-10 17:05:09,099 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:09,125 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:09,148 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:09,178 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:09,203 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:09,236 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:09,265 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:05:09,292 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-10 17:05:09,296 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 1000 samples from validation split
+2026-02-10 17:05:09,297 - __main__ - INFO - Training samples: 5000
+2026-02-10 17:05:09,297 - __main__ - INFO - Validation samples: 1000
+2026-02-10 17:05:09,297 - __main__ - INFO - Initializing model...
+2026-02-10 17:05:09,697 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Initialized UNet model
+2026-02-10 17:05:09,804 - __main__ - INFO - Model parameters: 185,248,650 (trainable: 185,248,650)
+2026-02-10 17:05:09,963 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Trainer initialized on device: cuda
+2026-02-10 17:05:09,963 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Mixed precision training: True
+2026-02-10 17:05:11,748 - __main__ - INFO - MLflow tracking enabled
+2026-02-10 17:05:11,748 - __main__ - INFO - Starting training...
+2026-02-10 17:05:11,748 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Starting training for 50 epochs
+2026-02-10 17:05:12,308 - __main__ - ERROR - Training failed with error: Given groups=1, weight of size [128, 4, 3, 3], expected input[16, 3, 32, 32] to have 4 channels, but got 3 channels instead
+Traceback (most recent call last):
+  File "/media/alireza/D29856C39856A62F/AI project/projects/multi-objective-preference-diffusion-for-controlled-text-to-image/scripts/train.py", line 244, in main
+    history = trainer.train(
+        num_epochs=num_epochs,
+        early_stopping_patience=config.training.get("early_stopping_patience", 10),
+        save_best=True,
+    )
+  File "/media/alireza/D29856C39856A62F/AI project/projects/multi-objective-preference-diffusion-for-controlled-text-to-image/src/multi_objective_preference_diffusion_for_controlled_text_to_image/training/trainer.py", line 247, in train
+    train_metrics = self.train_epoch()
+  File "/media/alireza/D29856C39856A62F/AI project/projects/multi-objective-preference-diffusion-for-controlled-text-to-image/src/multi_objective_preference_diffusion_for_controlled_text_to_image/training/trainer.py", line 111, in train_epoch
+    outputs = self.model(
+        images, text_embeddings, preference_targets, return_dict=True
+    )
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/media/alireza/D29856C39856A62F/AI project/projects/multi-objective-preference-diffusion-for-controlled-text-to-image/src/multi_objective_preference_diffusion_for_controlled_text_to_image/models/model.py", line 178, in forward
+    noise_pred = self.unet(
+                 ~~~~~~~~~^
+        noisy_latents,
+        ^^^^^^^^^^^^^^
+        timesteps,
+        ^^^^^^^^^^
+        encoder_hidden_states=text_embeddings,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ).sample
+    ^
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/diffusers/models/unets/unet_2d_condition.py", line 1106, in forward
+    sample = self.conv_in(sample)
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/conv.py", line 553, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alireza/anaconda3/lib/python3.13/site-packages/torch/nn/modules/conv.py", line 548, in _conv_forward
+    return F.conv2d(
+           ~~~~~~~~^
+        input, weight, bias, self.stride, self.padding, self.dilation, self.groups
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+RuntimeError: Given groups=1, weight of size [128, 4, 3, 3], expected input[16, 3, 32, 32] to have 4 channels, but got 3 channels instead
+2026-02-10 17:10:20,736 - __main__ - INFO - Loading configuration from configs/default.yaml
+2026-02-10 17:10:20,736 - multi_objective_preference_diffusion_for_controlled_text_to_image.utils.config - INFO - Loading configuration from configs/default.yaml
+2026-02-10 17:10:20,738 - __main__ - INFO - Random seed set to 42
+2026-02-10 17:10:20,738 - __main__ - INFO - Using device: cuda
+2026-02-10 17:10:20,738 - __main__ - INFO - Creating datasets...
+2026-02-10 17:10:20,738 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions train split...
+2026-02-10 17:10:20,738 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-10 17:10:20,824 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:20,850 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:20,863 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-10 17:10:20,886 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:20,910 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,025 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,058 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,085 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 200 OK"
+2026-02-10 17:10:21,108 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,134 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,231 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,256 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,285 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-10 17:10:21,314 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,341 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-02-10 17:10:21,365 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,391 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,420 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,451 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-10 17:10:21,528 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 5000 samples from train split
+2026-02-10 17:10:21,528 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions validation split...
+2026-02-10 17:10:21,528 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-10 17:10:21,553 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,578 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,591 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-10 17:10:21,617 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,642 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,662 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,686 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,713 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,754 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,779 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-10 17:10:21,801 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-10 17:10:21,804 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 1000 samples from validation split
+2026-02-10 17:10:21,805 - __main__ - INFO - Training samples: 5000
+2026-02-10 17:10:21,805 - __main__ - INFO - Validation samples: 1000
+2026-02-10 17:10:21,805 - __main__ - INFO - Initializing model...
+2026-02-10 17:10:22,197 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Initialized UNet model
+2026-02-10 17:10:22,302 - __main__ - INFO - Model parameters: 185,248,681 (trainable: 185,248,681)
+2026-02-10 17:10:22,460 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Trainer initialized on device: cuda
+2026-02-10 17:10:22,460 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Mixed precision training: True
+2026-02-10 17:10:23,297 - __main__ - INFO - MLflow tracking enabled
+2026-02-10 17:10:23,297 - __main__ - INFO - Starting training...
+2026-02-10 17:10:23,297 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Starting training for 50 epochs
+2026-02-10 17:10:32,304 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 100: loss=0.0192, diffusion=0.0173, preference=0.0190
+2026-02-10 17:10:38,872 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 200: loss=0.0096, diffusion=0.0073, preference=0.0229
+2026-02-10 17:10:45,462 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 300: loss=0.0059, diffusion=0.0040, preference=0.0195
+2026-02-13 15:04:59,079 - __main__ - INFO - Loading configuration from configs/default.yaml
+2026-02-13 15:04:59,079 - multi_objective_preference_diffusion_for_controlled_text_to_image.utils.config - INFO - Loading configuration from configs/default.yaml
+2026-02-13 15:04:59,082 - __main__ - INFO - Random seed set to 42
+2026-02-13 15:04:59,082 - __main__ - INFO - Using device: cuda
+2026-02-13 15:04:59,082 - __main__ - INFO - Creating datasets...
+2026-02-13 15:04:59,082 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions train split...
+2026-02-13 15:04:59,082 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-13 15:04:59,156 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,186 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,204 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-13 15:04:59,232 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,259 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:04:59,319 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:04:59,364 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,387 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 200 OK"
+2026-02-13 15:04:59,420 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,456 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-13 15:04:59,594 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-13 15:04:59,622 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,653 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:04:59,677 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,705 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:04:59,733 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,762 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:04:59,787 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:04:59,814 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:04:59,975 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 5000 samples from train split
+2026-02-13 15:04:59,977 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions validation split...
+2026-02-13 15:04:59,977 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-13 15:05:00,002 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:00,025 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:00,037 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-13 15:05:00,065 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:00,089 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:00,111 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:00,148 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:00,184 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:00,223 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:00,251 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:00,288 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:00,298 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 1000 samples from validation split
+2026-02-13 15:05:00,298 - __main__ - INFO - Training samples: 5000
+2026-02-13 15:05:00,298 - __main__ - INFO - Validation samples: 1000
+2026-02-13 15:05:00,298 - __main__ - INFO - Initializing model...
+2026-02-13 15:05:00,997 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Initialized UNet model
+2026-02-13 15:05:00,997 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Loading CLIP text encoder...
+2026-02-13 15:05:01,019 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:01,039 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-13 15:05:01,067 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:01,096 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:05:01,272 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:01,272 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-02-13 15:05:01,284 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+2026-02-13 15:05:01,310 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:01,330 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:05:01,342 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+2026-02-13 15:05:01,367 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:01,391 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:01,412 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-02-13 15:05:01,439 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/xet-read-token/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268 "HTTP/1.1 200 OK"
+2026-02-13 15:05:19,603 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:19,630 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32 "HTTP/1.1 200 OK"
+2026-02-13 15:05:19,669 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/commits/main "HTTP/1.1 200 OK"
+2026-02-13 15:05:19,713 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/discussions?p=0 "HTTP/1.1 200 OK"
+2026-02-13 15:05:19,753 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/commits/refs%2Fpr%2F66 "HTTP/1.1 200 OK"
+2026-02-13 15:05:19,775 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:05:19,800 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors "HTTP/1.1 302 Found"
+2026-02-13 15:05:19,839 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/xet-read-token/c237dc49a33fc61debc9276459120b7eac67e7ef "HTTP/1.1 200 OK"
+2026-02-13 15:05:19,887 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Initialized CLIP text encoder successfully
+2026-02-13 15:05:19,896 - __main__ - INFO - Model parameters: 204,169,265 (trainable: 141,003,313)
+2026-02-13 15:05:20,166 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Trainer initialized on device: cuda
+2026-02-13 15:05:20,166 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Mixed precision training: True
+2026-02-13 15:05:21,540 - __main__ - INFO - MLflow tracking enabled
+2026-02-13 15:05:21,541 - __main__ - INFO - Starting training...
+2026-02-13 15:05:21,541 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Starting training for 50 epochs
+2026-02-13 15:05:36,858 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 100: loss=0.0210, diffusion=0.0196, preference=0.0140
+2026-02-13 15:05:50,503 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 200: loss=0.0088, diffusion=0.0076, preference=0.0113
+2026-02-13 15:06:04,150 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 300: loss=0.0060, diffusion=0.0050, preference=0.0101
+2026-02-13 15:06:11,166 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 0/50: train_loss=0.0404, val_loss=0.0058, lr=0.000100
+2026-02-13 15:06:12,390 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:06:12,391 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0058
+2026-02-13 15:06:26,699 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 413: loss=0.0050, diffusion=0.0038, preference=0.0118
+2026-02-13 15:06:40,333 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 513: loss=0.0040, diffusion=0.0028, preference=0.0127
+2026-02-13 15:07:00,174 - __main__ - INFO - Loading configuration from configs/default.yaml
+2026-02-13 15:07:00,174 - multi_objective_preference_diffusion_for_controlled_text_to_image.utils.config - INFO - Loading configuration from configs/default.yaml
+2026-02-13 15:07:00,177 - __main__ - INFO - Random seed set to 42
+2026-02-13 15:07:00,177 - __main__ - INFO - Using device: cuda
+2026-02-13 15:07:00,177 - __main__ - INFO - Creating datasets...
+2026-02-13 15:07:00,177 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions train split...
+2026-02-13 15:07:00,177 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-13 15:07:00,240 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,266 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,279 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-13 15:07:00,301 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,329 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:00,368 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:00,407 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,427 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/revision/0bb028f274446e0b102c1253d087a98eeb4519a3 "HTTP/1.1 200 OK"
+2026-02-13 15:07:00,457 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,479 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:00,568 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:00,593 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,623 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/labeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:07:00,643 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,670 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:07:00,694 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,715 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:00,737 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,763 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/datasets/google-research-datasets/conceptual_captions/tree/0bb028f274446e0b102c1253d087a98eeb4519a3/unlabeled?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:07:00,926 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 5000 samples from train split
+2026-02-13 15:07:00,929 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loading Conceptual Captions validation split...
+2026-02-13 15:07:00,929 - datasets.load - ERROR - `trust_remote_code` is not supported anymore.
+Please check that the Hugging Face dataset 'conceptual_captions' isn't based on a loading script and remove `trust_remote_code`.
+If the dataset is based on a loading script, please ask the dataset author to remove it and convert it to a standard format like Parquet.
+2026-02-13 15:07:00,952 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,974 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:00,986 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/google-research-datasets/conceptual_captions/0bb028f274446e0b102c1253d087a98eeb4519a3/README.md "HTTP/1.1 200 OK"
+2026-02-13 15:07:01,010 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:01,031 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:01,047 - httpx - INFO - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/conceptual_captions/conceptual_captions.py "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:01,080 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:01,102 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:01,134 - httpx - INFO - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=conceptual_captions "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:01,160 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:01,181 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/datasets/google-research-datasets/conceptual_captions/resolve/0bb028f274446e0b102c1253d087a98eeb4519a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:01,190 - multi_objective_preference_diffusion_for_controlled_text_to_image.data.loader - INFO - Loaded 1000 samples from validation split
+2026-02-13 15:07:01,190 - __main__ - INFO - Training samples: 5000
+2026-02-13 15:07:01,190 - __main__ - INFO - Validation samples: 1000
+2026-02-13 15:07:01,190 - __main__ - INFO - Initializing model...
+2026-02-13 15:07:01,971 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Initialized UNet model
+2026-02-13 15:07:01,971 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Loading CLIP text encoder...
+2026-02-13 15:07:01,999 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:02,010 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,037 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:02,062 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,246 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:02,258 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,278 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 15:07:02,289 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/openai/clip-vit-base-patch32/3d74acf9a28c67741b2f4f2ea7635f0aaf6f0268/config.json "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,313 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:02,337 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:02,366 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/pytorch_model.bin "HTTP/1.1 302 Found"
+2026-02-13 15:07:02,391 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/main/model.safetensors "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:02,415 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32 "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,454 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/commits/main "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,500 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/discussions?p=0 "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,551 - httpx - INFO - HTTP Request: GET https://huggingface.co/api/models/openai/clip-vit-base-patch32/commits/refs%2Fpr%2F66 "HTTP/1.1 200 OK"
+2026-02-13 15:07:02,575 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors.index.json "HTTP/1.1 404 Not Found"
+2026-02-13 15:07:02,611 - httpx - INFO - HTTP Request: HEAD https://huggingface.co/openai/clip-vit-base-patch32/resolve/refs%2Fpr%2F66/model.safetensors "HTTP/1.1 302 Found"
+2026-02-13 15:07:02,612 - huggingface_hub.utils._http - WARNING - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-02-13 15:07:02,661 - multi_objective_preference_diffusion_for_controlled_text_to_image.models.model - INFO - Initialized CLIP text encoder successfully
+2026-02-13 15:07:02,670 - __main__ - INFO - Model parameters: 204,169,265 (trainable: 141,003,313)
+2026-02-13 15:07:02,926 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Trainer initialized on device: cuda
+2026-02-13 15:07:02,926 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Mixed precision training: True
+2026-02-13 15:07:04,604 - __main__ - INFO - MLflow tracking enabled
+2026-02-13 15:07:04,604 - __main__ - INFO - Starting training...
+2026-02-13 15:07:04,604 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Starting training for 50 epochs
+2026-02-13 15:07:19,694 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 100: loss=0.0205, diffusion=0.0195, preference=0.0097
+2026-02-13 15:07:33,303 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 200: loss=0.0087, diffusion=0.0077, preference=0.0102
+2026-02-13 15:07:47,047 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 300: loss=0.0059, diffusion=0.0050, preference=0.0093
+2026-02-13 15:07:54,028 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 0/50: train_loss=0.0404, val_loss=0.0058, lr=0.000100
+2026-02-13 15:07:55,749 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:07:55,750 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0058
+2026-02-13 15:08:10,148 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 413: loss=0.0046, diffusion=0.0037, preference=0.0091
+2026-02-13 15:08:24,058 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 513: loss=0.0039, diffusion=0.0028, preference=0.0108
+2026-02-13 15:08:37,839 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 613: loss=0.0037, diffusion=0.0026, preference=0.0108
+2026-02-13 15:08:44,520 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 1/50: train_loss=0.0047, val_loss=0.0040, lr=0.000100
+2026-02-13 15:08:46,320 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:08:46,321 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0040
+2026-02-13 15:09:00,584 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 726: loss=0.0030, diffusion=0.0021, preference=0.0087
+2026-02-13 15:09:14,921 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 826: loss=0.0034, diffusion=0.0026, preference=0.0082
+2026-02-13 15:09:28,755 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 926: loss=0.0031, diffusion=0.0019, preference=0.0121
+2026-02-13 15:09:35,602 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 2/50: train_loss=0.0035, val_loss=0.0031, lr=0.000099
+2026-02-13 15:09:37,404 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:09:37,405 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0031
+2026-02-13 15:09:52,036 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1039: loss=0.0042, diffusion=0.0031, preference=0.0118
+2026-02-13 15:10:06,385 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1139: loss=0.0026, diffusion=0.0016, preference=0.0104
+2026-02-13 15:10:20,600 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1239: loss=0.0042, diffusion=0.0031, preference=0.0107
+2026-02-13 15:10:27,481 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 3/50: train_loss=0.0030, val_loss=0.0035, lr=0.000098
+2026-02-13 15:10:42,289 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1352: loss=0.0032, diffusion=0.0021, preference=0.0111
+2026-02-13 15:10:56,234 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1452: loss=0.0023, diffusion=0.0014, preference=0.0085
+2026-02-13 15:11:10,253 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1552: loss=0.0022, diffusion=0.0012, preference=0.0107
+2026-02-13 15:11:17,090 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 4/50: train_loss=0.0026, val_loss=0.0028, lr=0.000098
+2026-02-13 15:11:18,896 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:11:18,897 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0028
+2026-02-13 15:11:20,240 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_5.pt
+2026-02-13 15:11:34,371 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1665: loss=0.0029, diffusion=0.0019, preference=0.0095
+2026-02-13 15:11:48,653 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1765: loss=0.0023, diffusion=0.0012, preference=0.0105
+2026-02-13 15:12:02,826 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1865: loss=0.0018, diffusion=0.0009, preference=0.0090
+2026-02-13 15:12:09,725 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 5/50: train_loss=0.0023, val_loss=0.0025, lr=0.000097
+2026-02-13 15:12:11,517 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:12:11,518 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0025
+2026-02-13 15:12:26,004 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 1978: loss=0.0021, diffusion=0.0011, preference=0.0103
+2026-02-13 15:12:39,939 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2078: loss=0.0043, diffusion=0.0031, preference=0.0117
+2026-02-13 15:12:54,110 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2178: loss=0.0024, diffusion=0.0013, preference=0.0114
+2026-02-13 15:13:00,959 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 6/50: train_loss=0.0023, val_loss=0.0022, lr=0.000095
+2026-02-13 15:13:02,797 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:13:02,797 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0022
+2026-02-13 15:13:17,043 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2291: loss=0.0024, diffusion=0.0014, preference=0.0101
+2026-02-13 15:13:30,876 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2391: loss=0.0020, diffusion=0.0010, preference=0.0101
+2026-02-13 15:13:44,841 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2491: loss=0.0014, diffusion=0.0007, preference=0.0069
+2026-02-13 15:13:51,610 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 7/50: train_loss=0.0020, val_loss=0.0018, lr=0.000094
+2026-02-13 15:13:53,622 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:13:53,623 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0018
+2026-02-13 15:14:07,868 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2604: loss=0.0023, diffusion=0.0013, preference=0.0104
+2026-02-13 15:14:21,990 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2704: loss=0.0017, diffusion=0.0006, preference=0.0108
+2026-02-13 15:14:35,879 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2804: loss=0.0016, diffusion=0.0009, preference=0.0076
+2026-02-13 15:14:42,650 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 8/50: train_loss=0.0019, val_loss=0.0019, lr=0.000092
+2026-02-13 15:14:56,814 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 2917: loss=0.0019, diffusion=0.0010, preference=0.0088
+2026-02-13 15:15:10,732 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3017: loss=0.0019, diffusion=0.0010, preference=0.0094
+2026-02-13 15:15:25,042 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3117: loss=0.0021, diffusion=0.0009, preference=0.0114
+2026-02-13 15:15:31,892 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 9/50: train_loss=0.0018, val_loss=0.0016, lr=0.000091
+2026-02-13 15:15:33,683 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:15:33,684 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0016
+2026-02-13 15:15:34,989 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_10.pt
+2026-02-13 15:15:49,140 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3230: loss=0.0012, diffusion=0.0005, preference=0.0067
+2026-02-13 15:16:03,056 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3330: loss=0.0016, diffusion=0.0006, preference=0.0100
+2026-02-13 15:16:17,034 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3430: loss=0.0018, diffusion=0.0008, preference=0.0098
+2026-02-13 15:16:23,869 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 10/50: train_loss=0.0018, val_loss=0.0019, lr=0.000089
+2026-02-13 15:16:38,283 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3543: loss=0.0021, diffusion=0.0011, preference=0.0100
+2026-02-13 15:16:52,556 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3643: loss=0.0017, diffusion=0.0006, preference=0.0111
+2026-02-13 15:17:06,582 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3743: loss=0.0020, diffusion=0.0009, preference=0.0106
+2026-02-13 15:17:13,438 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 11/50: train_loss=0.0017, val_loss=0.0016, lr=0.000087
+2026-02-13 15:17:27,779 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3856: loss=0.0013, diffusion=0.0006, preference=0.0077
+2026-02-13 15:17:41,693 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 3956: loss=0.0016, diffusion=0.0004, preference=0.0120
+2026-02-13 15:17:55,657 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4056: loss=0.0018, diffusion=0.0005, preference=0.0122
+2026-02-13 15:18:02,458 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 12/50: train_loss=0.0016, val_loss=0.0016, lr=0.000084
+2026-02-13 15:18:16,590 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4169: loss=0.0022, diffusion=0.0011, preference=0.0106
+2026-02-13 15:18:30,595 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4269: loss=0.0014, diffusion=0.0004, preference=0.0099
+2026-02-13 15:18:44,382 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4369: loss=0.0015, diffusion=0.0006, preference=0.0088
+2026-02-13 15:18:51,154 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 13/50: train_loss=0.0016, val_loss=0.0016, lr=0.000082
+2026-02-13 15:18:52,920 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:18:52,920 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0016
+2026-02-13 15:19:07,026 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4482: loss=0.0016, diffusion=0.0006, preference=0.0099
+2026-02-13 15:19:20,781 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4582: loss=0.0021, diffusion=0.0008, preference=0.0125
+2026-02-13 15:19:35,006 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4682: loss=0.0018, diffusion=0.0006, preference=0.0117
+2026-02-13 15:19:41,813 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 14/50: train_loss=0.0016, val_loss=0.0023, lr=0.000080
+2026-02-13 15:19:43,059 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_15.pt
+2026-02-13 15:19:57,143 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4795: loss=0.0017, diffusion=0.0005, preference=0.0124
+2026-02-13 15:20:10,892 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4895: loss=0.0012, diffusion=0.0003, preference=0.0086
+2026-02-13 15:20:24,775 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 4995: loss=0.0014, diffusion=0.0003, preference=0.0106
+2026-02-13 15:20:31,520 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 15/50: train_loss=0.0017, val_loss=0.0019, lr=0.000077
+2026-02-13 15:20:45,765 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5108: loss=0.0013, diffusion=0.0004, preference=0.0088
+2026-02-13 15:20:59,938 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5208: loss=0.0017, diffusion=0.0008, preference=0.0086
+2026-02-13 15:21:13,842 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5308: loss=0.0015, diffusion=0.0003, preference=0.0119
+2026-02-13 15:21:20,676 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 16/50: train_loss=0.0016, val_loss=0.0014, lr=0.000074
+2026-02-13 15:21:22,461 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:21:22,462 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0014
+2026-02-13 15:21:36,773 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5421: loss=0.0016, diffusion=0.0006, preference=0.0105
+2026-02-13 15:21:51,143 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5521: loss=0.0015, diffusion=0.0004, preference=0.0112
+2026-02-13 15:22:04,958 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5621: loss=0.0015, diffusion=0.0006, preference=0.0099
+2026-02-13 15:22:11,752 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 17/50: train_loss=0.0015, val_loss=0.0018, lr=0.000072
+2026-02-13 15:22:25,949 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5734: loss=0.0014, diffusion=0.0003, preference=0.0115
+2026-02-13 15:22:39,832 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5834: loss=0.0020, diffusion=0.0008, preference=0.0123
+2026-02-13 15:22:53,781 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 5934: loss=0.0016, diffusion=0.0007, preference=0.0097
+2026-02-13 15:23:00,578 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 18/50: train_loss=0.0015, val_loss=0.0015, lr=0.000069
+2026-02-13 15:23:14,861 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6047: loss=0.0014, diffusion=0.0003, preference=0.0108
+2026-02-13 15:23:29,015 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6147: loss=0.0014, diffusion=0.0004, preference=0.0097
+2026-02-13 15:23:42,926 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6247: loss=0.0018, diffusion=0.0005, preference=0.0123
+2026-02-13 15:23:49,734 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 19/50: train_loss=0.0014, val_loss=0.0013, lr=0.000066
+2026-02-13 15:23:51,506 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:23:51,507 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0013
+2026-02-13 15:23:52,747 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_20.pt
+2026-02-13 15:24:06,900 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6360: loss=0.0018, diffusion=0.0004, preference=0.0134
+2026-02-13 15:24:21,036 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6460: loss=0.0011, diffusion=0.0002, preference=0.0084
+2026-02-13 15:24:34,890 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6560: loss=0.0015, diffusion=0.0006, preference=0.0097
+2026-02-13 15:24:41,611 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 20/50: train_loss=0.0014, val_loss=0.0013, lr=0.000063
+2026-02-13 15:24:55,576 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6673: loss=0.0014, diffusion=0.0002, preference=0.0118
+2026-02-13 15:25:09,403 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6773: loss=0.0014, diffusion=0.0004, preference=0.0102
+2026-02-13 15:25:23,124 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6873: loss=0.0012, diffusion=0.0003, preference=0.0087
+2026-02-13 15:25:29,801 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 21/50: train_loss=0.0014, val_loss=0.0016, lr=0.000060
+2026-02-13 15:25:43,823 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 6986: loss=0.0016, diffusion=0.0005, preference=0.0118
+2026-02-13 15:25:57,853 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7086: loss=0.0013, diffusion=0.0002, preference=0.0106
+2026-02-13 15:26:11,627 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7186: loss=0.0014, diffusion=0.0003, preference=0.0112
+2026-02-13 15:26:18,359 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 22/50: train_loss=0.0014, val_loss=0.0013, lr=0.000057
+2026-02-13 15:26:32,358 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7299: loss=0.0016, diffusion=0.0004, preference=0.0122
+2026-02-13 15:26:45,974 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7399: loss=0.0013, diffusion=0.0003, preference=0.0105
+2026-02-13 15:26:59,742 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7499: loss=0.0013, diffusion=0.0002, preference=0.0116
+2026-02-13 15:27:06,439 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 23/50: train_loss=0.0013, val_loss=0.0013, lr=0.000054
+2026-02-13 15:27:08,198 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:27:08,199 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0013
+2026-02-13 15:27:22,228 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7612: loss=0.0014, diffusion=0.0003, preference=0.0116
+2026-02-13 15:27:36,347 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7712: loss=0.0010, diffusion=0.0003, preference=0.0079
+2026-02-13 15:27:49,855 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7812: loss=0.0015, diffusion=0.0007, preference=0.0080
+2026-02-13 15:27:56,510 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 24/50: train_loss=0.0014, val_loss=0.0013, lr=0.000050
+2026-02-13 15:27:58,266 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:27:58,266 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0013
+2026-02-13 15:27:59,506 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_25.pt
+2026-02-13 15:28:13,581 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 7925: loss=0.0014, diffusion=0.0003, preference=0.0113
+2026-02-13 15:28:27,282 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8025: loss=0.0013, diffusion=0.0003, preference=0.0100
+2026-02-13 15:28:41,089 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8125: loss=0.0016, diffusion=0.0006, preference=0.0097
+2026-02-13 15:28:47,783 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 25/50: train_loss=0.0013, val_loss=0.0013, lr=0.000047
+2026-02-13 15:29:02,074 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8238: loss=0.0013, diffusion=0.0003, preference=0.0098
+2026-02-13 15:29:15,819 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8338: loss=0.0014, diffusion=0.0002, preference=0.0113
+2026-02-13 15:29:29,433 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8438: loss=0.0012, diffusion=0.0003, preference=0.0096
+2026-02-13 15:29:36,146 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 26/50: train_loss=0.0013, val_loss=0.0013, lr=0.000044
+2026-02-13 15:29:50,092 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8551: loss=0.0014, diffusion=0.0003, preference=0.0103
+2026-02-13 15:30:03,800 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8651: loss=0.0015, diffusion=0.0003, preference=0.0119
+2026-02-13 15:30:17,592 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8751: loss=0.0013, diffusion=0.0002, preference=0.0104
+2026-02-13 15:30:24,233 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 27/50: train_loss=0.0013, val_loss=0.0013, lr=0.000041
+2026-02-13 15:30:38,295 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8864: loss=0.0012, diffusion=0.0002, preference=0.0095
+2026-02-13 15:30:51,795 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 8964: loss=0.0014, diffusion=0.0002, preference=0.0120
+2026-02-13 15:31:05,282 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9064: loss=0.0013, diffusion=0.0003, preference=0.0103
+2026-02-13 15:31:11,968 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 28/50: train_loss=0.0013, val_loss=0.0012, lr=0.000038
+2026-02-13 15:31:13,715 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:31:13,716 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0012
+2026-02-13 15:31:27,992 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9177: loss=0.0014, diffusion=0.0002, preference=0.0113
+2026-02-13 15:31:41,845 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9277: loss=0.0010, diffusion=0.0002, preference=0.0079
+2026-02-13 15:31:55,667 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9377: loss=0.0013, diffusion=0.0002, preference=0.0104
+2026-02-13 15:32:02,402 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 29/50: train_loss=0.0013, val_loss=0.0012, lr=0.000035
+2026-02-13 15:32:04,176 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:32:04,177 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0012
+2026-02-13 15:32:05,410 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_30.pt
+2026-02-13 15:32:19,353 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9490: loss=0.0011, diffusion=0.0002, preference=0.0091
+2026-02-13 15:32:33,329 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9590: loss=0.0015, diffusion=0.0004, preference=0.0115
+2026-02-13 15:32:47,041 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9690: loss=0.0013, diffusion=0.0002, preference=0.0116
+2026-02-13 15:32:53,745 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 30/50: train_loss=0.0013, val_loss=0.0013, lr=0.000032
+2026-02-13 15:33:07,855 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9803: loss=0.0012, diffusion=0.0001, preference=0.0103
+2026-02-13 15:33:21,570 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 9903: loss=0.0014, diffusion=0.0004, preference=0.0105
+2026-02-13 15:33:35,209 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10003: loss=0.0011, diffusion=0.0001, preference=0.0094
+2026-02-13 15:33:41,895 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 31/50: train_loss=0.0013, val_loss=0.0012, lr=0.000029
+2026-02-13 15:33:56,141 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10116: loss=0.0015, diffusion=0.0002, preference=0.0126
+2026-02-13 15:34:09,800 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10216: loss=0.0010, diffusion=0.0002, preference=0.0087
+2026-02-13 15:34:23,446 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10316: loss=0.0010, diffusion=0.0002, preference=0.0077
+2026-02-13 15:34:30,159 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 32/50: train_loss=0.0012, val_loss=0.0012, lr=0.000027
+2026-02-13 15:34:31,915 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:34:31,916 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0012
+2026-02-13 15:34:46,014 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10429: loss=0.0015, diffusion=0.0004, preference=0.0106
+2026-02-13 15:34:59,716 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10529: loss=0.0014, diffusion=0.0002, preference=0.0119
+2026-02-13 15:35:13,439 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10629: loss=0.0012, diffusion=0.0002, preference=0.0099
+2026-02-13 15:35:20,137 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 33/50: train_loss=0.0012, val_loss=0.0012, lr=0.000024
+2026-02-13 15:35:34,169 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10742: loss=0.0011, diffusion=0.0002, preference=0.0084
+2026-02-13 15:35:48,137 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10842: loss=0.0013, diffusion=0.0001, preference=0.0121
+2026-02-13 15:36:01,805 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 10942: loss=0.0015, diffusion=0.0002, preference=0.0129
+2026-02-13 15:36:08,500 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 34/50: train_loss=0.0012, val_loss=0.0012, lr=0.000021
+2026-02-13 15:36:10,257 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:36:10,258 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0012
+2026-02-13 15:36:11,504 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_35.pt
+2026-02-13 15:36:25,660 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11055: loss=0.0013, diffusion=0.0002, preference=0.0107
+2026-02-13 15:36:39,702 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11155: loss=0.0010, diffusion=0.0002, preference=0.0085
+2026-02-13 15:36:53,272 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11255: loss=0.0011, diffusion=0.0001, preference=0.0103
+2026-02-13 15:36:59,991 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 35/50: train_loss=0.0012, val_loss=0.0012, lr=0.000019
+2026-02-13 15:37:01,738 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:37:01,739 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0012
+2026-02-13 15:37:15,495 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11368: loss=0.0014, diffusion=0.0002, preference=0.0125
+2026-02-13 15:37:28,983 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11468: loss=0.0014, diffusion=0.0003, preference=0.0111
+2026-02-13 15:37:42,911 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11568: loss=0.0011, diffusion=0.0003, preference=0.0083
+2026-02-13 15:37:49,571 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 36/50: train_loss=0.0012, val_loss=0.0012, lr=0.000017
+2026-02-13 15:38:03,536 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11681: loss=0.0012, diffusion=0.0001, preference=0.0106
+2026-02-13 15:38:17,040 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11781: loss=0.0011, diffusion=0.0001, preference=0.0098
+2026-02-13 15:38:30,611 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11881: loss=0.0011, diffusion=0.0001, preference=0.0097
+2026-02-13 15:38:37,292 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 37/50: train_loss=0.0012, val_loss=0.0012, lr=0.000014
+2026-02-13 15:38:51,249 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 11994: loss=0.0013, diffusion=0.0002, preference=0.0107
+2026-02-13 15:39:04,987 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12094: loss=0.0011, diffusion=0.0001, preference=0.0095
+2026-02-13 15:39:18,982 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12194: loss=0.0012, diffusion=0.0002, preference=0.0101
+2026-02-13 15:39:25,670 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 38/50: train_loss=0.0012, val_loss=0.0012, lr=0.000012
+2026-02-13 15:39:39,720 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12307: loss=0.0010, diffusion=0.0002, preference=0.0086
+2026-02-13 15:39:53,395 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12407: loss=0.0011, diffusion=0.0001, preference=0.0099
+2026-02-13 15:40:07,009 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12507: loss=0.0012, diffusion=0.0001, preference=0.0105
+2026-02-13 15:40:13,673 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 39/50: train_loss=0.0012, val_loss=0.0011, lr=0.000010
+2026-02-13 15:40:15,406 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:40:15,407 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0011
+2026-02-13 15:40:16,623 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_40.pt
+2026-02-13 15:40:30,492 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12620: loss=0.0010, diffusion=0.0001, preference=0.0085
+2026-02-13 15:40:44,328 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12720: loss=0.0010, diffusion=0.0001, preference=0.0090
+2026-02-13 15:40:57,868 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12820: loss=0.0008, diffusion=0.0001, preference=0.0072
+2026-02-13 15:41:04,611 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 40/50: train_loss=0.0012, val_loss=0.0011, lr=0.000009
+2026-02-13 15:41:06,312 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:41:06,313 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0011
+2026-02-13 15:41:19,940 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 12933: loss=0.0012, diffusion=0.0001, preference=0.0109
+2026-02-13 15:41:33,439 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13033: loss=0.0013, diffusion=0.0002, preference=0.0114
+2026-02-13 15:41:47,227 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13133: loss=0.0010, diffusion=0.0001, preference=0.0091
+2026-02-13 15:41:54,076 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 41/50: train_loss=0.0012, val_loss=0.0011, lr=0.000007
+2026-02-13 15:41:55,875 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:41:55,877 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0011
+2026-02-13 15:42:10,237 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13246: loss=0.0010, diffusion=0.0001, preference=0.0089
+2026-02-13 15:42:24,092 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13346: loss=0.0011, diffusion=0.0001, preference=0.0092
+2026-02-13 15:42:37,764 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13446: loss=0.0011, diffusion=0.0002, preference=0.0093
+2026-02-13 15:42:44,586 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 42/50: train_loss=0.0012, val_loss=0.0011, lr=0.000006
+2026-02-13 15:42:46,534 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:42:46,535 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0011
+2026-02-13 15:43:00,634 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13559: loss=0.0011, diffusion=0.0001, preference=0.0096
+2026-02-13 15:43:14,436 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13659: loss=0.0012, diffusion=0.0001, preference=0.0108
+2026-02-13 15:43:28,168 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13759: loss=0.0013, diffusion=0.0002, preference=0.0112
+2026-02-13 15:43:34,938 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 43/50: train_loss=0.0012, val_loss=0.0011, lr=0.000004
+2026-02-13 15:43:49,067 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13872: loss=0.0012, diffusion=0.0002, preference=0.0108
+2026-02-13 15:44:03,247 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 13972: loss=0.0010, diffusion=0.0001, preference=0.0094
+2026-02-13 15:44:17,068 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14072: loss=0.0013, diffusion=0.0001, preference=0.0113
+2026-02-13 15:44:23,858 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 44/50: train_loss=0.0012, val_loss=0.0011, lr=0.000003
+2026-02-13 15:44:25,077 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_45.pt
+2026-02-13 15:44:39,350 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14185: loss=0.0012, diffusion=0.0002, preference=0.0102
+2026-02-13 15:44:53,265 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14285: loss=0.0013, diffusion=0.0001, preference=0.0124
+2026-02-13 15:45:07,145 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14385: loss=0.0013, diffusion=0.0001, preference=0.0119
+2026-02-13 15:45:14,323 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 45/50: train_loss=0.0012, val_loss=0.0011, lr=0.000003
+2026-02-13 15:45:28,585 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14498: loss=0.0012, diffusion=0.0001, preference=0.0107
+2026-02-13 15:45:42,535 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14598: loss=0.0012, diffusion=0.0001, preference=0.0103
+2026-02-13 15:45:56,381 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14698: loss=0.0011, diffusion=0.0002, preference=0.0095
+2026-02-13 15:46:03,207 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 46/50: train_loss=0.0011, val_loss=0.0011, lr=0.000002
+2026-02-13 15:46:04,926 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/best_model.pt
+2026-02-13 15:46:04,927 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - New best model saved with val_loss=0.0011
+2026-02-13 15:46:19,433 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14811: loss=0.0012, diffusion=0.0001, preference=0.0112
+2026-02-13 15:46:33,231 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 14911: loss=0.0010, diffusion=0.0001, preference=0.0092
+2026-02-13 15:46:47,158 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15011: loss=0.0010, diffusion=0.0001, preference=0.0092
+2026-02-13 15:46:53,948 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 47/50: train_loss=0.0011, val_loss=0.0011, lr=0.000001
+2026-02-13 15:47:08,232 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15124: loss=0.0010, diffusion=0.0001, preference=0.0089
+2026-02-13 15:47:22,129 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15224: loss=0.0014, diffusion=0.0001, preference=0.0128
+2026-02-13 15:47:36,055 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15324: loss=0.0012, diffusion=0.0001, preference=0.0103
+2026-02-13 15:47:42,881 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 48/50: train_loss=0.0011, val_loss=0.0011, lr=0.000001
+2026-02-13 15:47:57,350 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15437: loss=0.0013, diffusion=0.0001, preference=0.0118
+2026-02-13 15:48:11,125 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15537: loss=0.0013, diffusion=0.0001, preference=0.0120
+2026-02-13 15:48:25,007 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Step 15637: loss=0.0010, diffusion=0.0001, preference=0.0093
+2026-02-13 15:48:31,790 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Epoch 49/50: train_loss=0.0011, val_loss=0.0011, lr=0.000001
+2026-02-13 15:48:33,022 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/checkpoint_epoch_50.pt
+2026-02-13 15:48:34,247 - multi_objective_preference_diffusion_for_controlled_text_to_image.training.trainer - INFO - Checkpoint saved to checkpoints/final_model.pt
+2026-02-13 15:48:34,307 - __main__ - INFO - Training history saved to results/training_history.json
+2026-02-13 15:48:34,307 - __main__ - INFO - Training completed successfully!
