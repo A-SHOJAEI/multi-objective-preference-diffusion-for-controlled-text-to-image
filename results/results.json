@@ -1,0 +1,24 @@
+{
+  "model": "Multi-Objective Preference Diffusion for Controlled Text-to-Image",
+  "training": {
+    "total_epochs": 50,
+    "best_epoch": 46,
+    "best_val_loss": 0.001117,
+    "final_train_loss": 0.001144,
+    "final_val_loss": 0.001118,
+    "initial_train_loss": 0.040412,
+    "initial_val_loss": 0.005790,
+    "learning_rate": "cosine annealing (0.0001 -> 1.88e-06)"
+  },
+  "convergence": {
+    "train_loss_reduction": "0.0404 -> 0.0011 (97.2% reduction)",
+    "val_loss_reduction": "0.0058 -> 0.0011 (80.7% reduction)",
+    "stable_convergence": true,
+    "no_overfitting": true
+  },
+  "best_checkpoint": {
+    "epoch": 46,
+    "global_step": 14711,
+    "val_loss": 0.001117
+  }
+}
